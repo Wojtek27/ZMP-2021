@@ -6,17 +6,23 @@
 #define ERROR_noLib 1
 #define ERROR_createCmd 2
 
+#include <cstdio>
+#define LINE SIZE 500
+
 using namespace std;
 
 
-int main()
+
+int main(int argc, char **argv)
 {
+
 
   void *pFun;
 
   /*
    * Wtyczka Move
    */
+   
   void *pLibHnd_Move = dlopen("libInterp4Move.so",RTLD_LAZY);
   Interp4Command *(*pCreateCmd_Move)(void);
 
@@ -50,6 +56,7 @@ int main()
   /*
    * Wtyczka Set
    */
+   
   void *pLibHnd_Set = dlopen("libInterp4Set.so",RTLD_LAZY);
   Interp4Command *(*pCreateCmd_Set)(void);
 
@@ -80,4 +87,5 @@ int main()
   
   dlclose(pLibHnd_Move);
   dlclose(pLibHnd_Set);
+  
 }
