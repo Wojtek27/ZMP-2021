@@ -4,20 +4,20 @@ Scene::Scene(){}
 
 Scene::~Scene(){}
 
-void Scene::LoadMobObjects(ListMobileOb &ListMobileOb){
-    MobileObjects = ListMobileOb;
+void Scene::LoadMobObjects(MobileObjList &MobileObjList){
+    MobileObjects = MobileObjList;
 }
 
 void Scene::Print(){
     std::cout << "\n Istniejące obiekty mobilne: ";
 
-    for(ListMobileOb::iterator i = MobileObjects.begin(); i != MobileObjects.end(); i++){
+    for(MobileObjList::iterator i = MobileObjects.begin(); i != MobileObjects.end(); i++){
         std::cout << "\n \t" << i->first;
     }
     std::cout << endl;
 }
 
-ListMobileOb Scene::GetMobObjects(){
+MobileObjList Scene::GetMobObjects(){
     return MobileObjects;
 }
 
@@ -42,7 +42,7 @@ bool Scene::ExistMobObjects(std::string name){
 std::vector<std::shared_ptr<MobileObj>> Scene::GetPtrs(){
     std::vector<std::shared_ptr<MobileObj>> Ptrs;
 
-    for (ListMobileOb::iterator i = MobileObjects.begin(); i != MobileObjects.end(); i++)
+    for (MobileObjList::iterator i = MobileObjects.begin(); i != MobileObjects.end(); i++)
         Ptrs.push_back(i->second);
 
     return Ptrs;

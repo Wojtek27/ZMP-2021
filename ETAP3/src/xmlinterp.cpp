@@ -77,21 +77,21 @@ void XMLInterp4Config::ProcessCubeAttrs(const xercesc::Attributes &rAttrs){
   */
 
   char *sName_Name = xercesc::XMLString::transcode(rAttrs.getQName(0));
-  char *sName_Scale = xercesc::XMLString::transcode(rAttrs.getQName(3));
-  char *sName_RGB = xercesc::XMLString::transcode(rAttrs.getQName(1));
-  char *sName_Shift = xercesc::XMLString::transcode(rAttrs.getQName(2));
-  char *sName_Trans = xercesc::XMLString::transcode(rAttrs.getQName(5));
-  char *sName_Rot = xercesc::XMLString::transcode(rAttrs.getQName(4));
+  char *sName_Scale = xercesc::XMLString::transcode(rAttrs.getQName(1));
+  char *sName_RGB = xercesc::XMLString::transcode(rAttrs.getQName(2));
+  char *sName_Shift = xercesc::XMLString::transcode(rAttrs.getQName(3));
+  char *sName_Trans = xercesc::XMLString::transcode(rAttrs.getQName(4));
+  char *sName_Rot = xercesc::XMLString::transcode(rAttrs.getQName(5));
   
   
 
   XMLSize_t Index = 0;
   char *sValue_Name = xercesc::XMLString::transcode(rAttrs.getValue(Index));
-  char *sValue_Scale = xercesc::XMLString::transcode(rAttrs.getValue(3));
-  char *sValue_RGB = xercesc::XMLString::transcode(rAttrs.getValue(1));
-  char *sValue_Shift = xercesc::XMLString::transcode(rAttrs.getValue(2));
-  char *sValue_Trans = xercesc::XMLString::transcode(rAttrs.getValue(5));
-  char *sValue_Rot = xercesc::XMLString::transcode(rAttrs.getValue(4));
+  char *sValue_Scale = xercesc::XMLString::transcode(rAttrs.getValue(1));
+  char *sValue_RGB = xercesc::XMLString::transcode(rAttrs.getValue(2));
+  char *sValue_Shift = xercesc::XMLString::transcode(rAttrs.getValue(3));
+  char *sValue_Trans = xercesc::XMLString::transcode(rAttrs.getValue(4));
+  char *sValue_Rot = xercesc::XMLString::transcode(rAttrs.getValue(5));
 
   //-----------------------------------------------------------------------------
   // Wyświetlenie nazw atrybutów i ich "wartości"

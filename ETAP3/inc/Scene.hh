@@ -18,11 +18,6 @@ using namespace std;
  */
 
 /*!
- * \brief Typ definiujący listę obiektów mobilnych. Komendy przechowywane są w postaci par, nazwy komendy (obiekt typu string) i adresu (wskaźnik shared_ptr). 
- */
-typedef std::map<std::string, std::shared_ptr<MobileObj>> ListMobileOb;
-
-/*!
  * \brief Odpowiada za modelowanie sceny dla obiektów mobilnych
  */
 class Scene : public AccessControl{ 
@@ -31,7 +26,7 @@ class Scene : public AccessControl{
     /*!
      * \brief Lista obiektów z klasy MobileObj
      */
-    ListMobileOb MobileObjects;
+    MobileObjList MobileObjects;
 
     public:
 
@@ -52,12 +47,12 @@ class Scene : public AccessControl{
      * 
      * \param[in] ListMobileOb - lista obiektów mobilnych do załadowania do sceny
      */
-    void LoadMobObjects(ListMobileOb &ListMobileOb);
+    void LoadMobObjects(MobileObjList &MobileObjList);
     
     /*!
      * \brief Zwraca listę obiektów mobilnych
      */
-    ListMobileOb GetMobObjects();
+    MobileObjList GetMobObjects();
 
     /*!
      * \brief Wyszukuje i zwraca wskaźnik na obiekt o nazwie podanej w parametrze

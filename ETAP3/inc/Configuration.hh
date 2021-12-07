@@ -9,7 +9,7 @@
 /*!
  * \brief Typ definiujący listę dla nazw bibliotek.
  */
-typedef std::vector<std::string> ListOfLibs;
+typedef std::vector<std::string> LibList;
 
 /*!
  * \file
@@ -23,12 +23,12 @@ class Configuration {
   /*!
    * \brief Lista nazw bibliotek
    */
-  ListOfLibs LibList;
+  LibList LibraryList;
 
   /*!
    * \brief Lista obiektów mobilnych w postaci pary nazwy i wskaźnika na obiekt.
    */
-  ListMobileOb ObList;
+  MobileObjList MobileObjectList;
 
   public:
 
@@ -45,15 +45,15 @@ class Configuration {
   /*!
    * \brief Zwraca listę nazw bibliotek
    */
-  ListOfLibs GetLibList(){
-    return LibList;
+  LibList GetLibList(){
+    return LibraryList;
   }
 
   /*!
    * \brief Zwraca listę obiektów mobilnych
    */
-  ListMobileOb GetObList(){
-    return ObList;
+    MobileObjList GetObList(){
+    return MobileObjectList;
   }
 };
 #endif

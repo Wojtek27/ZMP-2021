@@ -12,21 +12,21 @@ void Sender::Watching_and_Sending(){
 
     // Wczytanie listy obiektów mobilnych
     // (obiektów typu std::map<std::string, std::shared_ptr<MobileObj>>)
-    ListMobileOb MobileObjects = _pScn->GetMobObjects();
+     MobileObjList MobileObjects = _pScn->GetMobObjects();
 
     // Utworzenie listy na wskaźniki do obiektów mobilnych
     // Wskaźniki będą pobierane z drugiego elementu każdej pary powyższej listy
-    std::vector<std::shared_ptr<MobileObj>> MobileObjectsList;
+     std::vector<std::shared_ptr<MobileObj>> MobileObjectsList;
+
 
     // Utworzenie iteratora do przeszukania listy obiektów mobilnych
-    ListMobileOb::iterator iterator;
+    MobileObjList::iterator iterator;
 
     // Przepisanie wskaźników na obiekty mobilne
     for (iterator = MobileObjects.begin(); iterator != MobileObjects.end(); iterator++){
       MobileObjectsList.push_back(iterator->second);
     }
 
-    //------- Przeglądanie tej kolekcji to uproszczony przykład
 
     for (auto spObj : MobileObjectsList){
 

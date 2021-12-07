@@ -233,13 +233,13 @@ void SendMobileObjectsToServer(Scene &Scn, Sender &ClientSender){
 
 int main(int argc, char **argv){
 
-  Configuration Config;              // Obiekt konfiguracji, konfiguracja zostanie wczytana po odczytaniu pliku XML
-  ListOfLibs ConfigLibraryList;      // Lista bibliotek odczytana z pliku konfiguracyjnego
-  ListMobileOb MobileObjList;        // Lista obiektów mobilnych odczytana z pliku konfiguracyjnego
-  Set4LibraryInterfaces LibraryList; // Lista (zestaw) wczytanych bibliotek
-  Scene ProgramScene;                // Scena, lista obiektów mobilnych
-  Sender ClientSender(&ProgramScene);
-  istringstream iStrm;
+  Configuration Config;               // Obiekt konfiguracji, konfiguracja zostanie wczytana po odczytaniu pliku XML
+  LibList ConfigLibraryList;          // Lista bibliotek odczytana z pliku konfiguracyjnego
+  MobileObjList MobileObjList;        // Lista obiektów mobilnych odczytana z pliku konfiguracyjnego
+  Set4LibraryInterfaces LibraryList;      // Lista (zestaw) wczytanych bibliotek
+  Scene ProgramScene;                 // Scena, lista obiektów mobilnych
+  Sender ClientSender(&ProgramScene); // Klient serwera
+  istringstream iStrm; 
   
   // Łączenie z serwerem
   ClientSender.Connect();
@@ -266,8 +266,8 @@ int main(int argc, char **argv){
   MobileObjList = Config.GetObList();
   ProgramScene.LoadMobObjects(MobileObjList);
   SendMobileObjectsToServer(ProgramScene, ClientSender);
-  ProgramScene.Print(); // testowo wyświetla nazwy obiektów
-
+  ProgramScene.Print(); 
+  
   // Czytanie pliku preprocesorem do strumienia
   ExecPreprocesor(argv[1], iStrm);
   cout << endl << "Pokonywana trasa robota:" << endl << iStrm.str() << endl;

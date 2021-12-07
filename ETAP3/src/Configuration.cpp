@@ -12,9 +12,9 @@ void Configuration::AddMobObj(const std::string &name, Vector3D &Scale, const st
     NewMobileObj->SetAng_Pitch_deg(Rot[1]); 
     NewMobileObj->SetAng_Yaw_deg(Rot[2]); 
 
-    ObList.insert({name, NewMobileObj});
+    MobileObjectList.insert({name, NewMobileObj});
 }
 
 void Configuration::AddLibName(const std::string &LibName){
-    LibList.push_back(LibName);
+    LibraryList.push_back(LibName);
 }
